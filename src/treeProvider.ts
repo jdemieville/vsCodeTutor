@@ -10,7 +10,6 @@ export class AssignmentProvider implements vscode.TreeDataProvider<Assignment> {
       }
 
     getChildren(element?: Assignment): Assignment[] {
-        
         return [new Assignment("example", "2.0", vscode.TreeItemCollapsibleState.None)]
     }
 
