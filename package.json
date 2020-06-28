@@ -15,26 +15,30 @@
 	"main": "./out/extension.js",
 	"contributes": {
 		"menus": {
-            "view/title": [
-                {
-                    "command": "vsCodeTutor.refreshEntry",
-                    "when": "view == vsCodeTutor",
-                    "group": "navigation"
-                }
-			  ]
-		},
-		"views" : {
-			"explorer" : [{
-				"id": "vsCodeTutor",
-				"name": "VS Code Tutor"
+			"view/title": [
+				{
+					"command": "vsCodeTutor.refreshEntry",
+					"when": "view == vsCodeTutor",
+					"group": "navigation"
 				}
-
+			]
+		},
+		"views": {
+			"explorer": [
+				{
+					"id": "vsCodeTutor",
+					"name": "VS Code Tutor"
+				}
 			]
 		},
 		"commands": [
 			{
 				"command": "vsCodeTutor.refreshEntry",
-				"title": "Refresh"
+				"title": "Refresh",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+				}
 			}
 		]
 	},
