@@ -1,19 +1,15 @@
 import { TreeItem, TreeItemCollapsibleState } from "vscode";
 
-export class Assignment extends TreeItem {
-    constructor(
-        public readonly label: string,
-        private version: string,
-        public readonly collapsibleState: TreeItemCollapsibleState
-      ) {
-        super(label, collapsibleState);
-      }
+export class Assignment {
+    constructor(private isProblem: boolean = true) {}
 
-      get tooltip(): string {
-        return `${this.label}-${this.version}`;
-      }
-    
-      get description(): string {
-        return this.version;
-      }
+    public getIsProblem(): boolean {
+        return this.isProblem
+    }
+
+    public getName(): string {
+        return "Some name"
+    }
+
+
 }
