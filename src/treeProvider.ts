@@ -8,10 +8,17 @@ export class AssignmentProvider implements vscode.TreeDataProvider<Assignment> {
 
     getTreeItem(element: Assignment): vscode.TreeItem {
         return element;
-      }
+    }
 
-    getChildren(element?: Assignment): Thenable<Assignment[]> {
-        return Promise.resolve([new Assignment("Example", "other example", vscode.TreeItemCollapsibleState.Collapsed)])
+    getChildren(element?: Assignment): Promise<Assignment[]> {
+        if (element) {
+            vscode.window.showInformationMessage("There was an element passed in");
+            return Promise.resolve([])
+        } else {
+            vscode.window.showInformationMessage("There was no element passed in");
+            return Promise.resolve([new Assignment("Example", "other example", vscode.TreeItemCollapsibleState.Collapsed)])
+        }
+
     }
 
     private _onDidChangeTreeData: vscode.EventEmitter<Assignment | undefined> = new vscode.EventEmitter<Assignment | undefined>();

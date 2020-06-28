@@ -10,15 +10,15 @@ export function activate(context: vscode.ExtensionContext) {
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "vscodetutor" is now active!');
-	const assignmentProvider = new AssignmentProvider(vscode.workspace.rootPath);
-	vscode.window.registerTreeDataProvider('vsCodeTutor', assignmentProvider);
-	vscode.commands.registerCommand('vsCodeTutor.refreshEntry', () => assignmentProvider.refresh());
+	const assignmentProvider = new AssignmentProvider(vscode.workspace.rootPath)
+
+	vscode.window.registerTreeDataProvider('vsCodeTutor', assignmentProvider)
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
 	let disposable = vscode.commands.registerCommand('vsCodeTutor.refreshEntry', () => {
 		// The code you place here will be executed every time your command is executed
-		
+		assignmentProvider.refresh()
 		// Display a message box to the user
 		vscode.window.showInformationMessage('Hello World from vsCodeTutor!');
 	});
