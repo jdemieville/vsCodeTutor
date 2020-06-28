@@ -14,6 +14,23 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"menus": {
+            "view/title": [
+                {
+                    "command": "vsCodeTutor.refreshEntry",
+                    "when": "view == vsCodeTutor",
+                    "group": "navigation"
+                }
+			  ]
+		},
+		"views" : {
+			"explorer" : [{
+				"id": "vsCodeTutor",
+				"name": "VS Code Tutor"
+				}
+
+			]
+		},
 		"commands": [
 			{
 				"command": "vscodetutor.helloWorld",
