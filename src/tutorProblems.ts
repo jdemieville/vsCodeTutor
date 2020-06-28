@@ -3,19 +3,47 @@ import MockAxios from 'axios-mock-adapter';
 
 let mock = new MockAxios(axios);
 mock.onGet('/problems').reply(200, {
-    className: 'Coding Clean',
-    functionName: 'helloWorld',
-    language: 'Java',
-    problem: 'Print \'Hello World\'',
-    inputs: [{
-        inputName: null,
-        inputType: null,
-        inputValue: null
-    }],
-    outputs: [{
-        outputType: 'string',
-        outputValue: 'Hello World'
-    }]
+    className: 'CS101',
+    assignments: [
+        {
+            functionName: 'product',
+            language: 'Java',
+            problem: 'Multiply two number and return the result',
+            inputs: [{
+                inputName: 'num1',
+                inputType: 'int',
+                inputValue: 2
+            },
+            {
+                inputName: 'num2',
+                inputType: 'int',
+                inputValue: 3
+            }],
+            outputs: [{
+                outputType: 'int',
+                outputValue: 6
+            }]
+        },
+        {
+            functionName: 'sum',
+            language: 'Java',
+            problem: 'Add two numbers and return the result',
+            inputs: [{
+                inputName: 'num1',
+                inputType: 'int',
+                inputValue: 2
+            },
+            {
+                inputName: 'num2',
+                inputType: 'int',
+                inputValue: 3
+            }],
+            outputs: [{
+                outputType: 'int',
+                outputValue: 5
+            }]
+        }
+    ]
 })
 export class TutorProblems {
 
